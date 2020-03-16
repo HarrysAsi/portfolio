@@ -97,6 +97,7 @@ class Profile(models.Model):
     profile_picture = models.ImageField(verbose_name=_("profile picture"), upload_to="images",
                                         default='images/default_profile.jpg',
                                         blank=False, max_length=500)
+    birthday = models.DateField(_("birthday"), blank=True, )
     telephone = models.CharField(_("telephone"), max_length=128, blank=True)
     website = models.URLField(verbose_name=_("website"), blank=True)
     linkedin = models.URLField(verbose_name=_("linkedin"), blank=True)
