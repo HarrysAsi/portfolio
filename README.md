@@ -1,4 +1,5 @@
-#Django Portfolio Template
+## Django Portfolio Template
+A simple dynamic portfolio created with the Django framework.
 
 ### Installation (Windows)
 ```
