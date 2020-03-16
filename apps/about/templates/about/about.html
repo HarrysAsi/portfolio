@@ -14,6 +14,9 @@
         {% if profile.birthday %}
             Birthday: <a href=""> {{profile.birthday}}</a>
             {% endif %}
+            {% if profile.cv_file %}
+            CV: <a href="{{profile.cv_file}}" target="_blank" ></a>
+            {% endif %}
         </div>
         <p class="lead mb-5">{{profile.biography}}</p>
         <div class="social-icons">

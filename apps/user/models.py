@@ -1,7 +1,19 @@
+import datetime, os
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .managers import CustomUserManager
 from django.utils.translation import ugettext_lazy as _
+
+
+def create_cv_file_path(self, filename):
+    """
+    Function which defines the path for the uploaded files for a blog
+    :param self:
+    :param filename: the file name
+    :return: the path where the uploaded file is going to be saved
+    """
+    timestamp = datetime.datetime.now().timestamp()
+    return os.path.join('cv_files' + "/" + str(int(timestamp)) + filename)
 
 
 class CustomUser(AbstractUser):
@@ -97,6 +109,12 @@ class Profile(models.Model):
     profile_picture = models.ImageField(verbose_name=_("profile picture"), upload_to="images",
                                         default='images/default_profile.jpg',
                                         blank=False, max_length=500)
+    cv_file = models.FileField(verbose_name=_("cv file"),
+                               upload_to=create_cv_file_path,
+                               blank=True,
+                               max_length=500,
+                               null=True,
+                               )
     birthday = models.DateField(_("birthday"), blank=True, null=True)
     telephone = models.CharField(_("telephone"), max_length=128, blank=True)
     website = models.URLField(verbose_name=_("website"), blank=True)

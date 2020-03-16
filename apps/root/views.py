@@ -6,7 +6,9 @@ from portfolio.settings import OWNER_EMAIL
 
 
 def root_view(request):
-    user = CustomUser.objects.get_or_create(email=OWNER_EMAIL)
+    # get or create returns tuple with (User, created) so we extract the user of it
+    user = CustomUser.objects.get_or_create(email=OWNER_EMAIL, is_superuser=True)[0]
+
     context = {
         "user": user,
         "profile": user.get_profile(),
