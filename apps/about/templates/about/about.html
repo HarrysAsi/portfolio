@@ -12,10 +12,10 @@
             Mobile Telephone: <a href=""> {{profile.telephone}}</a> <br>
             {% endif %}
         {% if profile.birthday %}
-            Birthday: <a href=""> {{profile.birthday}}</a>
+            Birthday: <a href=""> {{profile.birthday}}</a><br>
             {% endif %}
             {% if profile.cv_file %}
-            CV: <a href="{{profile.cv_file}}" target="_blank" ></a>
+            CV: <a target="_blank" href="{{profile.cv_file.url}}" >Preview</a>
             {% endif %}
         </div>
         <p class="lead mb-5">{{profile.biography}}</p>
