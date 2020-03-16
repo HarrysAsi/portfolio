@@ -24,10 +24,10 @@ class CustomUser(AbstractUser):
     objects = CustomUserManager()
 
     def get_profile(self):
-        return Profile.objects.get(user=self)
+        return Profile.objects.get_or_create(user=self)
 
     def get_address(self):
-        return Address.objects.get(user=self)
+        return Address.objects.get_or_create(user=self)
 
     def get_experiences(self):
         from ..experience.models import Experience
