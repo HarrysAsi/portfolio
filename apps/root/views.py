@@ -2,10 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 from apps.user.models import CustomUser
+from portfolio.settings import OWNER_EMAIL
 
 
 def root_view(request):
-    user = CustomUser.objects.get(email="xarhsasi@gmail.com")
+    user = CustomUser.objects.get(email=OWNER_EMAIL)
     context = {
         "user": user,
         "profile": user.get_profile(),

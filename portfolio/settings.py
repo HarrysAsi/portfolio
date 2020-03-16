@@ -204,3 +204,6 @@ if DEBUG:
 
 # Custom User Model
 AUTH_USER_MODEL = 'user.CustomUser'
+
+# Owner Email for the Portfolio
+OWNER_EMAIL = "xarhsasi@gmail.com"
