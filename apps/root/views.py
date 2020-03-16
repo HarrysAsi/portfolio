@@ -16,5 +16,6 @@ def root_view(request):
         "skills": user.get_skills(),
         "interests": user.get_interests(),
         "awards": user.get_awards(),
+        "projects": user.get_projects(),
     }
     return render(request, "root/index.html", context)

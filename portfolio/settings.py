@@ -63,6 +63,7 @@ PROJECT_APPS = [
     'apps.root',
     'apps.skills',
     'apps.blog',
+    'apps.project',
 ]
 
 PACKAGES_APPS = [

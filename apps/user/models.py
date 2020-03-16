@@ -49,6 +49,10 @@ class CustomUser(AbstractUser):
         from ..awards.models import Award
         return Award.objects.filter(user=self)
 
+    def get_projects(self):
+        from ..project.models import Project
+        return Project.objects.filter(user=self)
+
 
 class Address(models.Model):
     """
