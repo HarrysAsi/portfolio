@@ -19,3 +19,11 @@ def root_view(request):
         "projects": user.get_projects(),
     }
     return render(request, "root/index.html", context)
+
+
+def handler404(request, exception):
+    return render(request, 'handlers/404.html', status=404)
+
+
+def handler500(request):
+    return render(request, 'handlers/500.html', status=500)

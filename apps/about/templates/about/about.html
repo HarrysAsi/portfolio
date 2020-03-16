@@ -5,8 +5,10 @@
         <h1 class="mb-0">{{user.first_name}}
             <span class="text-primary text-break">{{user.last_name}}</span>
         </h1>
-        <div class="subheading mb-5">{{address.street}} {{address.address}} , {{address.city}}, {{address.state}} {{address.zip_code}}
-            <a href="mailto:{{user.email}}">- {{user.email}}</a>
+        <div class="subheading mb-5">{{address.street}} {{address.address}} , {{address.city}}, {{address.state}} {{address.zip_code}}</div>
+        <div class="subheading mb-5">
+        Email: <a href="mailto:{{user.email}}">- {{user.email}}</a> <br>
+        Mobile Telephone: <a href="">- {{profile.telephone}}</a>
         </div>
         <p class="lead mb-5">{{profile.biography}}</p>
         <div class="social-icons">
