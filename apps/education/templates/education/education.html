@@ -1,0 +1,23 @@
+{% load static %}
+
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+    <div class="w-100">
+        <h2 class="mb-5">Education</h2>
+
+        {% for education in educations %}
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+                <h3 class="mb-0">{{education.school_name}}</h3>
+                <div class="subheading mb-3">{{education.degree_title}}</div>
+                <div>{{education.information}}</div>
+                <p>MO: {{education.gpa}}</p>
+            </div>
+            <div class="resume-date text-md-right">
+                <span class="text-primary">{{education.date_started}} - {{education.date_ended}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<hr class="m-0">
